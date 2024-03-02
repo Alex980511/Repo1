@@ -1,6 +1,6 @@
 Feature: Tests for login page
   @FailLogin
-  Scenario: This is a negative scenario
+  Scenario: The user cannot login with invalid credentials
     Given I am on the login page
     When I insert a username "alex@yahoo.com"
     When I insert a password "masina123"
@@ -9,7 +9,7 @@ Feature: Tests for login page
     Then The message is "Your username is invalid"
 
   @PozitiveLogin
-  Scenario: This is a pozitive scenario
+  Scenario: The user can login with valid credentials
     Given I am on the login page
     When I insert a username "tomsmith"
     When I insert a password "SuperSecretPassword!"

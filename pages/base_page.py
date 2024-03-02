@@ -9,7 +9,8 @@ class BasePage(Driver):
     def type(self, locator, text):
         element = self.driver.find_element(*locator)
         element.click()
-        element.send_keys()
+        #aici am schimbat click cu clear
+        element.send_keys(text)
 
     def click(self, locator):
         self.driver.find_element(*locator).click()
