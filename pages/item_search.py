@@ -8,7 +8,7 @@ class ItemSearch(BasePage):
     MAIN_URL = "https://www.libris.ro/"
     SEARCH_INPUT_SELECTOR = (By.ID, "autoComplete")
     TITLE_SELECTOR = (By.CSS_SELECTOR, "pr-title-ct")
-    MAGNIFIER_SELECTOR = (By.XPATH, "onSearchClick")
+    MAGNIFIER_SELECTOR = (By.CSS_SELECTOR, "autoCompleteButton")
 
     def navigate_to_page(self):
         self.driver.get(self.MAIN_URL)

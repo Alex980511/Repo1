@@ -11,7 +11,13 @@ class EmagSearchPage(BasePage):
     MAGNIFIER_SELECTOR = (By.CSS_SELECTOR, "button.searchbox-submit-button")
     # after you seearch anything on emag, the result page will display the following info
     # total number of products + your keyword
-    TITLE_PHRASING_SELECTOR = (By.XPATH, "//span[@class='title-phrasing title-phrasing-xl']")
+    # the total number of products is hold by this element: span @class='title-phrasing title-phrasing-sm'
+    # the keyword that you just entered is hold by this element: span @class='title-phrasing title-phrasing-xl'
+    TITLE_PHRASING_SELECTOR_POZITIVE = (By.XPATH, "//span[@class='title-phrasing title-phrasing-xl']")
+    # for the negative cases when the keyword is not found on emag, title and number of products elements
+    # have different selectors, you can find them bellow
+    TITLE_PHRASING_SELECTOR_NEGATIVE = (By.XPATH, "//span[@class='title-phrasing title-phrasing-md']")
+    TITLE_PHRASING_NUMBER_NEGATIVE = (By.XPATH, "//span[@class='title-phrasing title-phrasing-sm text-danger']")
 
     def navigate_to_page(self):
         self.driver.get(self.MAIN_URL)
@@ -26,5 +32,12 @@ class EmagSearchPage(BasePage):
         self.type(self.SEARCH_INPUT_SELECTOR, text_to_search)
 
     def get_title_text(self):
-        return self.get_element_text(self.TITLE_PHRASING_SELECTOR)
+        return self.get_element_text(self.TITLE_PHRASING_SELECTOR_POZITIVE)
+
+    def get_title_negative_text(self):
+        return self.get_element_text(self.TITLE_PHRASING_SELECTOR_NEGATIVE)
+
+    def get_nr_of_products_negative_text(self):
+        return self.get_element_text(self.TITLE_PHRASING_NUMBER_NEGATIVE)
+
 

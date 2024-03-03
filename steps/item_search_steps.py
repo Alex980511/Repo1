@@ -8,9 +8,9 @@ def step_impl(context):
 def step_impl(context):
     context.item_search.click_on_search_button()
 
-@when('I enter this ISBN code "{isbn}"')
-def step_impl(context, isbn):
-    context.item_search.type_anything_on_search(isbn)
+@when('I enter "{item}"')
+def step_impl(context, item):
+    context.item_search.type_anything_on_search(item)
 
 @when ('I click the magnifier')
 def step_impl(context):

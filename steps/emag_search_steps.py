@@ -19,3 +19,11 @@ def step_impl(context):
 @then('"{keyword}" keyword is in title phrasing element')
 def step_impl(context, keyword):
     assert keyword in context.emag_search.get_title_text(), f"{keyword} is note found in title phrasing after search"
+
+@then('"{keyword}" keyword is in negative title phrasing element')
+def step_impl(context, keyword):
+    assert keyword in context.emag_search.get_title_negative_text(), f"{keyword} is not found in title phrasing after search"
+
+@then('"{keyword}" is in negative title phrasing number element')
+def step_impl(context, keyword):
+    assert keyword in context.emag_search.get_nr_of_products_negative_text(), f"{keyword} is not found in title phrasing number after search"
