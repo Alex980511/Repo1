@@ -8,7 +8,7 @@ class LoginPage(BasePage):
     LOGIN_PAGE_URL = "https://the-internet.herokuapp.com/login"
     EMAIL_INPUT = (By.ID, "username")
     PASSWORD_INPUT = (By.ID, "password")
-    LOGIN_BUTTON = (By.CSS_SELECTOR, "button.radius")
+    LOGIN_BUTTON = (By.CLASS_NAME, "fa-sign-in")
     FLASH_CONTAINER = (By.ID, "flash-messages")
 
     def navigate_to_page(self):
@@ -28,7 +28,10 @@ class LoginPage(BasePage):
     def is_message_displayed(self):
         assert self.wait_for_element(self.FLASH_CONTAINER, 50).is_displayed() == True, "Banner is not displayed"
 
-    def get_message_text(self):
-        return self.get_element_text(self.FLASH_CONTAINER).replace("×","")
+
+    def check_message(self, expected_message):
+            actual_message = self.get_element_text(self.FLASH_CONTAINER).replace("×","")
+            assert expected_message in actual_message, f'Expected message {expected_message}, Actual message{actual_message}'
+
 
 

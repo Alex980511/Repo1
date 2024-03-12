@@ -1,3 +1,5 @@
+import time
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -17,6 +19,7 @@ class CarturestiSearchPage(BasePage):
 
     def navigate_to_page(self):
         self.driver.get(self.MAIN_URL)
+        self.accept_cookie()
     # when you try to search a specific keyword on the maine page
     # the URL looks like this: https://carturesti.ro/product/search/razboi?page=109
     # this is why when you try to navigate directly to a specific page

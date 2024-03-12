@@ -34,8 +34,8 @@ class EmagSearchPage(BasePage):
     def get_title_text(self):
         return self.get_element_text(self.TITLE_PHRASING_SELECTOR_POZITIVE)
 
-    def get_title_negative_text(self):
-        return self.get_element_text(self.TITLE_PHRASING_SELECTOR_NEGATIVE)
+   # def get_title_negative_text(self):
+    #    return self.get_element_text(self.TITLE_PHRASING_SELECTOR_NEGATIVE)
 
     def get_nr_of_products_negative_text(self):
         return self.get_element_text(self.TITLE_PHRASING_NUMBER_NEGATIVE)

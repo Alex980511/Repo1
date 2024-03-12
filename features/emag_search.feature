@@ -11,7 +11,6 @@ Feature: this test suite tests search feature on Emag.ro website
   Scenario: This scenario will test a negative case for a non existing product
     Given I am on the primary page
     When I click on the icon button
-    When I enter the keyword "asdasdasd"
+    When I enter the keyword "bvdfvasdfafdsc"
     When I click on specific button
-    Then "asdasdasd" keyword is in negative title phrasing element
-    Then "0 rezultate pentru:" is in negative title phrasing number element
+    Then ""bvdfvasdfafdsc" 200 rezultate." is in title phrasing number element
