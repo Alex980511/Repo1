@@ -7,6 +7,7 @@ LANGUAGE
 I chose to perform the testing using the Python programming language and the PyCharm IDE. I used the Selenium, webdriver-manager, behave and behave-html-formatter libraries to automate the interaction with Emag , Carturesti and TheInternetHerokuapp pages. The "Python Packages" section of PyCharm can be accessed to install these libraries, and after you write the name of the library you nwant to acces, you only need to click the install button above.
 
 THE CHOSEN METHODOLOGY
+
 The software development methodology called BDD (Behavior-Driven Development) focuses on the collaboration of team members and on describing the behavior of the application in a simple language, such as Gherkin. I chose BDD because we can easily create automated tests that reflect the behavior specified by the stakeholders and because we can facilitate comunication between all people interested and working in the project.
 
 
